@@ -1,0 +1,259 @@
+:root {
+    --font-color: #31304D;
+    --border-color: #161A30;
+    --bg-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+    border-color: var(--font-color);
+}
+
+/* Background Colors */
+.background {
+    background: var(--bg-color);
+}
+
+/* Margins */
+.mt-1 {
+    margin-top: 1rem;
+}
+
+/* Display Utilities */
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+/* Justify and Align */
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* Width and Height */
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.min-h-36 {
+    min-height: 36px;
+}
+
+/* Borders and Dividers */
+.solid-divider {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Buttons */
+.btn {
+    background-color: transparent;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 2px 2px;
+    cursor: pointer;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+    border: 1px solid;
+    float: right;
+}
+
+.btn:hover {
+    box-shadow: -2px -2px 0 var(--border-color);
+    transform: translate(2px, 2px);
+}
+
+.btn:focus-visible {
+    outline-offset: 1px;
+}
+
+/* Containers */
+.container {
+    margin: 0 5rem 5rem 5rem;
+}
+
+/* Header */
+.header {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Content */
+.content {
+    min-width: 90vw;
+    padding: 1rem;
+    min-height: 290px;
+    gap: 20px;
+    border-width: 0 1px 1px 1px;
+    box-shadow: 0px 0px 0px 1px var(--border-color), 3px 3px 0px 0px var(--border-color);
+}
+
+/* Input and Checkbox Styles */
+.input-div,
+.checkbox-div {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+}
+
+input[type='checkbox'] {
+    accent-color: var(--font-color);
+    aspect-ratio: 1;
+    width: 16px;
+}
+
+/* Todo List Items */
+.todo-list > li {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 0px 1px var(--border-color), 3px 3px 0px 0px var(--border-color);
+    padding: 5px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    min-height: 36px;
+}
+
+.todo-list > li:hover {
+    box-shadow: -2px -2px 0 var(--border-color);
+    transform: translate(2px, 2px);
+    border: 1px solid var(--border-color);
+}
+
+/* Completed Todo Items */
+.completed {
+    text-decoration: line-through;
+}
+
+/* Input Label and Placeholder */
+.title-label {
+    position: relative;
+    width: 100%;
+}
+
+.title-input {
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+    background-color: transparent;
+}
+
+.title-input:focus-visible {
+    outline: none;
+}
+
+.title-span {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--font-color);
+}
+
+.title-input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.title-input:focus::placeholder {
+    color: #888;
+    transition: ease-in 0.4s;
+}
+
+.title-input:focus + .title-span {
+    visibility: hidden;
+}
+/* Theme Button */
+.theme-button {
+    border: none;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.theme-button > img {
+    width: 32px;
+    height: 32px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Yarı saydam arkaplan */
+    backdrop-filter: blur(10px); /* Blur efekti */
+}
+
+.alert {
+    border: 2px solid var(--border-color);
+    width: 40%;
+    height: 20%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Sayfanın geri kalanından üstte olması için yüksek z-index değeri */
+}
+
+@media screen and (max-width: 768px){
+    .content{
+        flex-direction: column;
+    }
+    .form-content{
+        width: 100%;
+    }
+    .list-content{
+        width: 100%;
+    }
+}

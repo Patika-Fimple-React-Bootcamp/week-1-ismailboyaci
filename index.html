@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="todos app">
+    <title>Your Todos</title>
+    <!-- Insert stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loading.css">
+</head>
+
+<body class="background" style="height: 100dvh;">
+    <div id="alert" class="alert">
+        <div>
+            <h2>Title is required.</h2>
+        </div>
+        <div class="d-flex justify-end">
+            <button class="btn" id="closeButton">Close</button>
+        </div>
+    </div>
+    <div class="d-flex justify-end">
+        <button class="theme-button">
+            <img class="theme-img" src="./assets/light.svg" alt="light"/>
+        </button>
+    </div>
+
+    <div class="container flex-column d-flex justify-center items-center" style="margin-top: 5rem;">
+        <h1 class="header">"The Most Basic To-Do List"</h1>
+        <hr class="solid-divider w-100">
+
+        <div class="content d-flex justify-center mt-1">
+            <div class="form-content w-50">
+                <form>
+                    <div class="d-flex flex-column justify-start items-start mt-1 min-h-36 input-div">
+                        <label for="todo-title" class="title-label">
+                            <input type="text" name="title" id="todo-title" class="title-input" placeholder="Ex. Finish homework">
+                            <span class="title-span">Title of Todo</span>
+                        </label>                        
+                    </div>
+
+                    <div class="d-flex justify-between items-center mt-1 checkbox-div min-h-36">
+                        <label for="todo-check">Completed</label>
+                        <input type="checkbox" name="check" id="todo-check" class="todo-checkbox">
+                    </div>
+
+                    <button type="submit" class="btn submit-button">Add</button>
+                </form>
+            </div>
+
+            <hr class="solid-divider">
+
+            <div class="loader-content">
+                <p class="loader-text">
+                    todos are loading
+                    <span class="dot-one">.</span>
+                    <span class="dot-two">.</span>
+                    <span class="dot-three">.</span>
+                </p>
+            </div>
+
+            <div class="list-content d-none w-50">
+                <ul class="todo-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insert JavaScript -->
+    <script type="module" src="app.js"></script>
+    <!-- <script type="module" src="alert.js"></script> -->
+</body>
+
+</html>
